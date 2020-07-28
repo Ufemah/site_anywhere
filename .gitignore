@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Private files
+constants.py
+
+# PyCharm system files
+.idea/*
