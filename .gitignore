@@ -130,6 +130,7 @@ dmypy.json
 
 # Private files
 constants.py
+static/
 
 # PyCharm system files
 .idea/*
