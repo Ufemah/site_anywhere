@@ -1,15 +1,13 @@
 import requests
-import sys
 
 
 def vals():
-
-    myUrl = 'https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11'
+    url = 'https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11'
 
     res = ''
 
     try:
-        response = requests.get(myUrl).json()
+        response = requests.get(url).json()
         for el in response:
             if el['ccy'] == 'USD' or el['ccy'] == 'EUR':
                 res += el['ccy']
@@ -20,7 +18,7 @@ def vals():
                 res += '\n'
 
     except Exception:
-       print(sys.exc_info()[1])
+        res = 'Sorry, something goes wrong'
 
     return res
 
