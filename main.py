@@ -19,7 +19,7 @@ def index_main():
 ######
 @app.route('/load/<string:id>', methods=['POST'])
 def test(id):
-    f = open('/home/Ufemah/mysite/static/text/test.txt', 'w')
+    f = open(constants.test_txt, 'w')
     print(id + ' ' + str(request.data, encoding='utf-8'), file=f)
     f.close()
     return "ok", 200
@@ -27,7 +27,7 @@ def test(id):
 
 @app.route('/show', methods=['GET'])
 def show():
-    return open('/home/Ufemah/mysite/static/text/test.txt').read()
+    return open(constants.test_txt).read()
 ######
 
 @app.route('/media/images/<string:name>')
