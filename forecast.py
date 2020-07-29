@@ -6,10 +6,10 @@ def forecast(city):
 
     try:
         response = requests.get(url).json()
-        # print(response)
+        print(response)
 
         weather_now_json = response['current_condition'][0]
-        # print(weather_now_json)
+        print(weather_now_json)
 
         weather_now = city + ' - прогноз погоды: \n' \
                              '{0} \n' \
@@ -17,7 +17,7 @@ def forecast(city):
                              'Ветер {3} {4} m/s \n' \
                              'Давление {5} mmhg \n' \
                              'Влажность {6} % \n' \
-                             'Видимость {7} km'.format(weather_now_json['lang_ru'][0]['value'],
+                             'Видимость {7} km'.format(weather_now_json['weatherDesc'][0]['value'],
                                                        min(weather_now_json['FeelsLikeC'], weather_now_json['temp_C']),
                                                        max(weather_now_json['FeelsLikeC'], weather_now_json['temp_C']),
                                                        weather_now_json['winddir16Point'],
@@ -33,4 +33,4 @@ def forecast(city):
 
 
 if __name__ == '__main__':
-    forecast('Kiyv')
+    print(forecast('Kiyv'))
