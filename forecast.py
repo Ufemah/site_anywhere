@@ -6,12 +6,17 @@ def forecast(city):
 
     try:
         response = requests.get(url).json()
-        print(response)
+        # print(response)
 
         weather_now_json = response['current_condition'][0]
         print(weather_now_json)
 
-        weather_now = city + ' - прогноз погоды: \n' \
+        print(response['nearest_area'][0]['areaName'])
+
+        if response['nearest_area'][0]['areaName'][0]['value'] == 'Kleiner Found':
+            city = 'Оймякон'
+
+        weather_now = city + ' - погода сейчас: \n' \
                              '{0} \n' \
                              'Температура {1}..{2} °C \n' \
                              'Ветер {3} {4} m/s \n' \
@@ -33,4 +38,4 @@ def forecast(city):
 
 
 if __name__ == '__main__':
-    print(forecast('Kiyv'))
+    print(forecast('цвцвц'))
