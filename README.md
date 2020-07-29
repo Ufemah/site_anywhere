@@ -1,2 +1,2 @@
 # site_anywhere
-own site
+site and server for telegram bot
