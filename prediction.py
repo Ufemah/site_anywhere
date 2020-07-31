@@ -1,8 +1,9 @@
 import random
+import constants
 
 
 def predict():
-    data = open('/home/Ufemah/mysite/static/text/predict_data.txt')
+    data = open(constants.prediction_file)
     data = data.readlines()
 
     r = random.randint(0, len(data)-1)
