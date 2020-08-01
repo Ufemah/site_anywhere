@@ -78,6 +78,11 @@ def weather_handle(message):
     bot.send_message(message.chat.id, forecast.forecast(message.text.replace('Погода ', '')))
 
 
+@bot.message_handler(content_types=["location"])
+def weather_location(message):
+    bot.send_message(message.chat.id, forecast.forecast(str(message.location.latitude) + "," + str(message.location.longitude)))
+
+
 @bot.message_handler(commands=['game'])
 def handle_game(message):
     bot.send_message(message.chat.id, game.first())
