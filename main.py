@@ -95,6 +95,3 @@ def handle_text(message):
 
     elif message.text == 'Работаешь?':
         bot.send_message(message.chat.id, 'Ага')
-
-    else:
-        bot.send_message(message.chat.id, 'Hi, ' + message.chat.first_name + '! Your wrote: ' + message.text)

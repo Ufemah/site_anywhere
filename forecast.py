@@ -2,7 +2,7 @@ import requests
 
 
 def forecast(city):
-    url = 'https://wttr.in/' + city + '?format=j1'
+    url = ('https://wttr.in/{}?format=j1').format(city)
 
     try:
         response = requests.get(url).json()
@@ -38,4 +38,4 @@ def forecast(city):
 
 
 if __name__ == '__main__':
-    print(forecast('цвцвц'))
+    print(forecast('Киев'))
